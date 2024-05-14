@@ -32,7 +32,8 @@ main {
   object-fit: cover;
 }
 
-input {
+input,
+select {
   appearance: none;
   background-color: transparent !important;
   color: white;
@@ -52,6 +53,13 @@ header input#search::placeholder {
 
 input:focus-within {
   border: 1px solid #ffffff50;
+}
+
+select {
+  appearance: none;
+  background-color: #ffffff1a !important;
+  border: 1px solid #ffffff50;
+  border-radius: 8px;
 }
 
 #current {
@@ -107,7 +115,7 @@ input:focus-within {
   }
 }
 
-#forcast {
+#forecast {
   .moon {
     .content {
       font-size: 1rem;
