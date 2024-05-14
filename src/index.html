@@ -8,7 +8,7 @@
   <body class="max-w-screen-2xl mx-auto h-dvh">
     <main class="main h-full flex flex-col">
       <header class="pt-10 pb-4">
-        <div class="container px-8 mx-auto">
+        <div class="container px-5 md:px-8 mx-auto">
           <div class="section flex items-center">
             <div class="logo mr-4">
               <img id="logo" class="h-12" />
@@ -41,13 +41,13 @@
         </div>
       </header>
       <div id="app" class="w-full h-full overflow-hidden relative">
-        <div class="container mx-auto w-full h-full px-8 pt-6 overflow-auto">
+        <div class="container mx-auto w-full h-full px-5 md:px-8 pt-6 overflow-auto">
           <div class="section relative lg:h-full lg:flex lg:flex-row gap-6">
             <div
               class="h-full grid grid-cols-1 lg:grid-cols-2 gap-8 w-full lg:w-2/3 lg:overflow-auto pr-3"
             >
-              <div id="current" class="flex lg:block h-fit pb-6 rounded-md lg:overflow-auto">
-                <div id="maincondition" class="py-6 w-1/2 lg:w-full">
+              <div id="current" class="flex flex-col md:flex-row lg:block h-fit pb-6 rounded-md lg:overflow-auto">
+                <div id="maincondition" class="py-6 w-full md:w-1/2 lg:w-full">
                   <div class="location text-white">
                     <p class="country">
                       <span class="city">Lagos</span>, Nigeria
@@ -171,7 +171,8 @@
                 class="h-fit w- relative rounded-lg overflow-auto grid grid-cols-2 gap-4 lg:block"
               >
                 <div
-                  class="moon w-full bg-white bg-opacity-15 border border-1 border-white border-opacity-10 backdrop-blur-sm rounded-lg pb-2"
+                  class="moon w-full bg-white bg-opacity-15 border border-1 border-white border-opacity-10 backdrop-blur-sm rounded-lg pb-2 col-span-2
+                  md:col-span-1 "
                 >
                   <div
                     class="heading sticky top-0 z-10 bg-white/10 text-[#7cabf2f0] backdrop-blur-xl px-3 pb-1 pt-2 rounded-t-md"
@@ -206,7 +207,7 @@
                 </div>
 
                 <div
-                  class="hourlyforcast mt-0 lg:mt-8 w-full bg-white bg-opacity-15 border border-1 border-white border-opacity-10 backdrop-blur-sm rounded-lg pb-2"
+                  class="hourlyforcast mt-0 lg:mt-8 w-full bg-white bg-opacity-15 border border-1 border-white border-opacity-10 backdrop-blur-sm rounded-lg pb-2 col-span-2 md:col-span-1"
                 >
                   <div
                     class="heading sticky top-0 z-10 bg-white/10 text-[#7cabf2f0] backdrop-blur-xl px-3 pb-1 pt-2 rounded-t-md"
@@ -398,7 +399,7 @@
 
                 <div class="cities text-white flex lg:flex-col gap-5 overflow-auto h-full w-full">
                   <div
-                    class="lagos relative flex p-4  bg-white/10 rounded-2xl  border border-white/10 w-2/6 lg:w-full h-fit"
+                    class="lagos relative flex p-4  bg-white/10 rounded-2xl  border border-white/10 min-w-60 w-2/3 md:w-2/6 lg:w-full h-fit"
                   >
                     <div class="flex flex-col mr-auto h-fill z-10">
                       <p class="text-lg">Lagos</p>
@@ -418,7 +419,7 @@
                     ></video>
                   </div>
                   <div
-                    class="lagos relative flex p-4  bg-white/10 rounded-2xl  border border-white/10 w-2/6 lg:w-full h-fit"
+                    class="lagos relative flex p-4  bg-white/10 rounded-2xl  border border-white/10 min-w-60 w-2/3 md:w-2/6 lg:w-full h-fit"
                   >
                     <div class="flex flex-col mr-auto h-fill z-10">
                       <p class="text-lg">Lagos</p>
@@ -453,8 +454,12 @@
           </div>
         </div>
       </div>
-      <footer class="mt-4">
-        <div class="container mx-auto bg-blue-800 w-full h-7"></div>
+      <footer class="mt-4 bg-blue-800/10">
+        <div class="container flex items-center justify-center py-2 mx-aut w-full h-7 text-center">
+          <a href="https://github.com/kizzylion/weather_app" class="text-white text-base">
+            <i class="bi bi-github"> Kizzylion</i>
+             © <script>document.write(new Date().getFullYear())</script></a>
+        </div>
       </footer>
     </main>
     <video id="bgvideo" autoplay loop muted>
