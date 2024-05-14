@@ -8,7 +8,116 @@
   margin: 0;
   box-sizing: border-box;
 }
-
+:root {
+  font-size: 16px;
+}
 body {
-  
+  background: linear-gradient(180deg, #111 0%, #031d3d 53%);
+}
+
+main {
+  background: linear-gradient(180deg, #ecf5ff10 0%, #0d223fc3 65%);
+}
+
+#bgvideo {
+  z-index: -10;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0.5;
+  background: linear-gradient(180deg, #11111100 0%, #0d223f 48.5%);
+  mix-blend-mode: screen;
+  flex-shrink: 0;
+  position: absolute;
+  top: 0;
+  object-fit: cover;
+}
+
+input {
+  appearance: none;
+  background-color: transparent !important;
+  color: white;
+  outline: none;
+  border: none;
+}
+
+header input#search::placeholder {
+  flex: 1 0 0;
+  color: #ffffff50;
+  font-family: Inter;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28.8px;
+}
+
+input:focus-within {
+  border: 1px solid #ffffff50;
+}
+
+#current {
+  #maincondition {
+    .country {
+      font-size: clamp(0.75rem, 3vh, 1.875rem);
+    }
+    .city {
+      font-size: clamp(1.25rem, 5vh, 3rem);
+    }
+    .date,
+    .time {
+      font-size: clamp(0.875rem, 1vh, 1.875rem);
+      font-weight: 400;
+    }
+    .time {
+      font-weight: 600;
+    }
+
+    .temp {
+      font-size: clamp(1.2rem, 5vh, 3rem);
+    }
+    .weathercondition {
+      font-size: clamp(1rem, 3vh, 1.875rem);
+      line-height: 1.2%;
+      font-weight: 400;
+    }
+  }
+  #currentDetail {
+    .tile .icon {
+      padding: 0.5em 0.75em;
+
+      i {
+        font-size: clamp(0.75rem, 3vh, 1rem);
+      }
+    }
+
+    .tile .content {
+      line-height: 1.2;
+      .title {
+        font-size: clamp(0.55rem, 4vh, 0.875rem);
+        font-weight: 300;
+        opacity: 0.8;
+      }
+      .text {
+        font-size: clamp(1rem, 4vh, 1.25rem);
+      }
+      .unit {
+        font-size: clamp(0.5rem, 4vh, 0.875rem);
+        font-weight: 300;
+      }
+    }
+  }
+}
+
+#forcast {
+  .moon {
+    .content {
+      font-size: 1rem;
+    }
+    .value {
+      font-size: clamp(0.5rem, 4vh, 0.75rem);
+    }
+
+    img {
+      /* background: lightgray 50% / cover no-repeat; */
+    }
+  }
 }

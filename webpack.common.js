@@ -4,9 +4,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
   entry: {
     index: "./src/index.js",
-    themescript: "./src/themescript.js",
     // print: "./src/print.js",
-  
   },
   output: {
     filename: "[name].bundle.js",
@@ -19,14 +17,24 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader'
-        }
+          loader: "babel-loader",
+        },
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif|ico)$/i,
         type: "asset/resource",
         generator: {
           filename: "images/[name][ext]",
+        },
+      },
+      {
+        test: /\.(mp4|webm)$/,
+        use: {
+          loader: "file-loader",
+          options: {
+            name: "[name].[ext]",
+            outputPath: "videos/",
+          },
         },
       },
       {
@@ -41,20 +49,20 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: "./src/index.html",
-      title: "KizzTaskMaster App",
+      title: "Yo! Weather App",
       favicon: "./src/img/Logo.png",
       inject: "body",
       meta: {
         viewport: "width=device-width, initial-scale=1.0",
-        "og:title": "KizzTaskMaster App",
-        "og:description": "KizzTaskMaster App",
+        "og:title": "Yo! Weather App",
+        "og:description": "Yo! Weather App",
         "og:image": "./images/Logo.png",
         "og:type": "website",
-        "og:url": "https://kizzylion.github.io/kizztaskmaster/",
+        "og:url": "",
         "twitter:card": "summary_large_image",
         "twitter:image": "./images/Logo.png",
-        "twitter:title": "KizzTaskMaster App",
-        "twitter:description": "KizzTaskMaster App",
+        "twitter:title": "Yo! Weather App",
+        "twitter:description": "Yo! Weather App",
       },
     }),
   ],
