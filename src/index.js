@@ -7,12 +7,8 @@ import { getCurrentLocation } from "./getCurrentLocation";
 import { getPositionWeatherData, getCityWeatherData } from "./fetchWeatherData";
 import { renderData } from "./renderData";
 import { createHomepage } from "./createHomepage";
-import { createHourlyInfo } from "./createHourlySection";
-import { createDailyInfo } from "./dailyForcastSection";
 
 createHomepage();
-createHourlyInfo();
-createDailyInfo();
 
 const currentLocationData = await getCurrentLocation()
   .then((position) => {

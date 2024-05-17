@@ -4,7 +4,11 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
   entry: {
     index: "./src/index.js",
-    createHomepage: "./src/createHomepage.js",
+    // createHomepage: "./src/createHomepage.js",
+    // render: "./src/renderData",
+    // createHourlyInfo: "./src/createHourlySection",
+    // createDailyInfo: "./src/dailyForcastSection",
+
     // print: "./src/print.js",
   },
   output: {

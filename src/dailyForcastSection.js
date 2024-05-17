@@ -29,7 +29,7 @@ export async function createDailyInfo(data) {
         <p>
             <img src=${imgUrl} class="hourlyImg mx-auto w-fill object-contain backdrop-blur-0" alt="">
         </p>
-        <p class="flex items-center flex-nowrap  text-xs md:text-2xl font-bold ">${returnSelectedDegree(data.forecast.forecastday[i].day.mintemp_c)}  <span class="inline-block min-w-4 w-full max-w-6 h-1 mx-auto rounded-md dayGradient"></span>  ${returnSelectedDegree(data.forecast.forecastday[i].day.maxtemp_c)} </p>
+        <p class="flex items-center flex-nowrap  text-xs md:text-mdd font-bold ">${returnSelectedDegree(data.forecast.forecastday[i].day.mintemp_c, data.forecast.forecastday[i].day.mintemp_f)}  <span class="inline-block min-w-4 w-full max-w-6 h-1 mx-auto rounded-md dayGradient"></span>  ${returnSelectedDegree(data.forecast.forecastday[i].day.maxtemp_c, data.forecast.forecastday[i].day.mintemp_f)} </p>
       `;
         eachDay.appendChild(list);
       })

@@ -2,7 +2,7 @@ import { format } from "date-fns";
 import { createHourlyInfo } from "./createHourlySection";
 import { createDailyInfo } from "./dailyForcastSection";
 
-export function renderData(data) {
+export async function renderData(data) {
   let city = document.querySelector(".city");
   let country = document.querySelector(".country");
   let date = document.querySelector(".date");

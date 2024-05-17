@@ -475,13 +475,11 @@ export function createHomepage() {
   const hourlyImg = document.querySelectorAll(".hourlyImg");
   const city = document.querySelectorAll(".cityBackground");
 
-  window.onload = function () {
-    video.src = videolink;
-    logo.src = logolink;
-    moonimg.src = moon;
-    hourlyImg.forEach((e) => (e.src = hourlyCond));
-    if (city.length) {
-      city.forEach((e) => (e.src = videolink));
-    }
-  };
+  video.src = videolink;
+  logo.src = logolink;
+  moonimg.src = moon;
+  hourlyImg.forEach((e) => (e.src = hourlyCond));
+  if (city.length) {
+    city.forEach((e) => (e.src = videolink));
+  }
 }
