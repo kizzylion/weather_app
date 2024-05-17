@@ -3,7 +3,17 @@ export const apiKey = "74acfdcd82e14dbdab1233448240705";
 export async function getCityWeatherData(city) {
   try {
     const apiUrl = `http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${city}&days=7&aqi=no&alerts=no`;
-    const response = await fetch(apiUrl);
+    const response = await fetch(apiUrl, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        // Add any other headers you need
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error("Network response was not ok");
+    }
     const data = await response.json();
 
     return data;

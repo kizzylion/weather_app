@@ -74,23 +74,35 @@ function _getCityWeatherData() {
           _context.prev = 0;
           apiUrl = "http://api.weatherapi.com/v1/forecast.json?key=".concat(apiKey, "&q=").concat(city, "&days=7&aqi=no&alerts=no");
           _context.next = 4;
-          return fetch(apiUrl);
+          return fetch(apiUrl, {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json"
+              // Add any other headers you need
+            }
+          });
         case 4:
           response = _context.sent;
-          _context.next = 7;
-          return response.json();
+          if (response.ok) {
+            _context.next = 7;
+            break;
+          }
+          throw new Error("Network response was not ok");
         case 7:
+          _context.next = 9;
+          return response.json();
+        case 9:
           data = _context.sent;
           return _context.abrupt("return", data);
-        case 11:
-          _context.prev = 11;
+        case 13:
+          _context.prev = 13;
           _context.t0 = _context["catch"](0);
           console.log(_context.t0);
-        case 14:
+        case 16:
         case "end":
           return _context.stop();
       }
-    }, _callee, null, [[0, 11]]);
+    }, _callee, null, [[0, 13]]);
   }));
   return _getCityWeatherData.apply(this, arguments);
 }
