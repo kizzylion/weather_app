@@ -1,4 +1,7 @@
 import { format } from "date-fns";
+import { createHourlyInfo } from "./createHourlySection";
+import { createDailyInfo } from "./dailyForcastSection";
+
 export function renderData(data) {
   let city = document.querySelector(".city");
   let country = document.querySelector(".country");
@@ -76,9 +79,15 @@ export function renderData(data) {
   illumination.innerText = `${data.forecast.forecastday[0].astro.moon_illumination}%`;
   moonPhase.textContent = `${data.forecast.forecastday[0].astro.moon_phase}`;
   moonset.innerText = data.forecast.forecastday[0].astro.moonset;
+
+  //hourly section
+  createHourlyInfo(data);
+
+  //daily section
+  createDailyInfo(data);
 }
 
-function returnSelectedDegree(celsius, fahrenheit) {
+export function returnSelectedDegree(celsius, fahrenheit) {
   return getSelectedDegree() == "celsius" ? `${celsius}˚c` : `${fahrenheit}˚f`; // if celsius is selected then return celsius else return fahrenheit
 }
 
