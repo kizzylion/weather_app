@@ -72,7 +72,7 @@ function _getCityWeatherData() {
       while (1) switch (_context.prev = _context.next) {
         case 0:
           _context.prev = 0;
-          apiUrl = "http://api.weatherapi.com/v1/forecast.json?key=".concat(apiKey, "&q=").concat(city, "&days=7&aqi=no&alerts=no");
+          apiUrl = "https://api.weatherapi.com/v1/forecast.json?key=".concat(apiKey, "&q=").concat(city, "&days=7&aqi=no&alerts=no");
           _context.next = 4;
           return fetch(apiUrl, {
             method: "GET",
@@ -116,7 +116,7 @@ function _getPositionWeatherData() {
       while (1) switch (_context2.prev = _context2.next) {
         case 0:
           _context2.prev = 0;
-          apiUrl = "http://api.weatherapi.com/v1/forecast.json?key=".concat(apiKey, "&q=").concat(position.latitude, ",").concat(position.longitude, "&days=7&aqi=no&alerts=no");
+          apiUrl = "https://api.weatherapi.com/v1/forecast.json?key=".concat(apiKey, "&q=").concat(position.latitude, ",").concat(position.longitude, "&days=7&aqi=no&alerts=no");
           _context2.next = 4;
           return fetch(apiUrl);
         case 4:
