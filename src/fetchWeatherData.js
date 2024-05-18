@@ -25,10 +25,17 @@ export async function getPositionWeatherData(position) {
   //
   try {
     const apiUrl = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${position.latitude},${position.longitude}&days=7&aqi=no&alerts=no`;
-    const response = await fetch(apiUrl);
-    const data = await response.json();
-
-    return data;
+    let url = new URL(apiUrl);
+    let request = new Request(url, {
+      method: "GET",
+    });
+    const response = await fetch(request);
+    if (!response.ok) {
+      throw new Error("Network response was not ok");
+    } else {
+      let data = response.json();
+      return data;
+    }
   } catch (error) {
     console.log(error);
   }

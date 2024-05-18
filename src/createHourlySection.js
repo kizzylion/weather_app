@@ -1,11 +1,12 @@
 import { format } from "date-fns";
 import { returnSelectedDegree } from "./renderData";
+import { transformDate } from "./renderData";
 
 export async function createHourlyInfo(hour) {
   let eachHour = document.querySelector(".eachHour");
   eachHour.innerHTML = "";
 
-  for (let i = format(new Date(), "H"); i < 24; i++) {
+  for (let i = transformDate(hour.location.localtime, "H"); i < 24; i++) {
     const hourDiv = await fetch(
       hour.forecast.forecastday[0].hour[i].condition.icon,
     )

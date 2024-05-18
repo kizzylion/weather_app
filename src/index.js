@@ -22,6 +22,8 @@ const currentLocationData = await getCurrentLocation()
   });
 console.log(currentLocationData);
 
+let SearchData;
+
 const defaultLocationData = await getCityWeatherData("London");
 console.log(defaultLocationData);
 

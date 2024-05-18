@@ -1,6 +1,25 @@
-import { format } from "date-fns";
+import { parseISO, format } from "date-fns";
 import { createHourlyInfo } from "./createHourlySection";
 import { createDailyInfo } from "./dailyForcastSection";
+import { data } from "autoprefixer";
+
+export function transformDate(dateStr, pattern) {
+  try {
+    const date = parseISO(dateStr);
+
+    if (isNaN(date)) {
+      return format(dateStr, pattern);
+      throw new RangeError(`invalid time value: ${dateStr}`);
+    }
+
+    console.log(format(date, pattern));
+    return format(date, pattern);
+  } catch (error) {
+    console.log("Date Parsing error:", error.message);
+  }
+}
+
+// console.log(transformDate("2024-05-18 10:00", "h a"));
 
 export async function renderData(data) {
   let city = document.querySelector(".city");
@@ -31,8 +50,8 @@ export async function renderData(data) {
 
   city.innerText = data.location.name;
   country.innerText = data.location.country;
-  date.innerText = format(new Date(data.location.localtime), "MMM dd, yyyy");
-  time.innerText = format(new Date(data.location.localtime), "h:mm a");
+  date.innerText = transformDate(data.location.localtime, "MMM dd, yyyy");
+  time.innerText = transformDate(data.location.localtime, "h:mm a");
   windSpeed.innerText = data.current.wind_kph;
   humidity.innerText = data.current.humidity;
   winddir.innerText = data.current.wind_dir;
@@ -81,7 +100,7 @@ export async function renderData(data) {
   moonset.innerText = data.forecast.forecastday[0].astro.moonset;
 
   //hourly section
-  createHourlyInfo(data);
+  await createHourlyInfo(data);
 
   //daily section
   createDailyInfo(data);
