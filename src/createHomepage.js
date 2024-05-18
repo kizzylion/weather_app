@@ -14,7 +14,7 @@ export function createHomepage() {
         <img id="logo" class="w-fill h-fill object-fill" />
       </div>
       <form
-        id="form"
+        id="searchform"
         action="#"
         class="w-full flex items-center relative ml-4"
       >
@@ -82,7 +82,7 @@ export function createHomepage() {
           <div id="currentDetail" class="grid grid-cols-2 gap-5">
             <div class="tile wind flex text-white items-center">
               <div
-                class="icon flex h-fit justify-center items-center border border-1 rounded-md border-white border-opacity-10 bg-white bg-opacity-10 mr-3"
+                class="icon flex h-fit justify-center items-center border border-1 rounded-md border-white border-opacity-10 bg-black bg-opacity-10 mr-3"
               >
                 <i class="bi bi-wind"></i>
               </div>
@@ -93,7 +93,7 @@ export function createHomepage() {
             </div>
             <div class="tile humidity flex text-white items-center">
               <div
-                class="icon flex h-fit justify-center items-center border border-1 rounded-md border-white border-opacity-10 bg-white bg-opacity-10 mr-3"
+                class="icon flex h-fit justify-center items-center border border-1 rounded-md border-white border-opacity-10 bg-black bg-opacity-10 mr-3"
               >
                 <i class="bi bi-moisture"></i>
               </div>
@@ -104,7 +104,7 @@ export function createHomepage() {
             </div>
             <div class="tile feelike flex text-white items-center">
               <div
-                class="icon flex h-fit justify-center items-center border border-1 rounded-md border-white border-opacity-10 bg-white bg-opacity-10 mr-3"
+                class="icon flex h-fit justify-center items-center border border-1 rounded-md border-white border-opacity-10 bg-black bg-opacity-10 mr-3"
               >
                 <i class="bi bi-thermometer"></i>
               </div>
@@ -115,7 +115,7 @@ export function createHomepage() {
             </div>
             <div class="tile winddir flex text-white items-center">
               <div
-                class="icon flex h-fit justify-center items-center border border-1 rounded-md border-white border-opacity-10 bg-white bg-opacity-10 mr-3"
+                class="icon flex h-fit justify-center items-center border border-1 rounded-md border-white border-opacity-10 bg-black bg-opacity-10 mr-3"
               >
                 <i class="bi bi-compass"></i>
               </div>
@@ -126,7 +126,7 @@ export function createHomepage() {
             </div>
             <div class="tile pressure flex text-white items-center">
               <div
-                class="icon flex h-fit justify-center items-center border border-1 rounded-md border-white border-opacity-10 bg-white bg-opacity-10 mr-3"
+                class="icon flex h-fit justify-center items-center border border-1 rounded-md border-white border-opacity-10 bg-black bg-opacity-10 mr-3"
               >
                 <i class="bi bi-speedometer"></i>
               </div>
@@ -137,7 +137,7 @@ export function createHomepage() {
             </div>
             <div class="tile uv flex text-white items-center">
               <div
-                class="icon flex h-fit justify-center items-center border border-1 rounded-md border-white border-opacity-10 bg-white bg-opacity-10 mr-3"
+                class="icon flex h-fit justify-center items-center border border-1 rounded-md border-white border-opacity-10 bg-black bg-opacity-10 mr-3"
               >
                 <i class="bi bi-sun"></i>
               </div>
@@ -148,7 +148,7 @@ export function createHomepage() {
             </div>
             <div class="tile precipitation flex text-white items-center">
               <div
-                class="icon flex h-fit justify-center items-center border border-1 rounded-md border-white border-opacity-10 bg-white bg-opacity-10 mr-3"
+                class="icon flex h-fit justify-center items-center border border-1 rounded-md border-white border-opacity-10 bg-black bg-opacity-10 mr-3"
               >
                 <i class="bi bi-droplet"></i>
               </div>
@@ -159,7 +159,7 @@ export function createHomepage() {
             </div>
             <div class="tile highlow flex text-white items-center">
               <div
-                class="icon flex h-fit justify-center items-center border border-1 rounded-md border-white border-opacity-10 bg-white bg-opacity-10 mr-3"
+                class="icon flex h-fit justify-center items-center border border-1 rounded-md border-white border-opacity-10 bg-black bg-opacity-10 mr-3"
               >
                 <i class="bi bi-thermometer-half"></i>
               </div>
@@ -176,11 +176,11 @@ export function createHomepage() {
         >
           <div
           id="moon"
-            class="moon w-full bg-white bg-opacity-15 border border-1 border-white border-opacity-10 backdrop-blur-sm rounded-lg pb-2 col-span-2
+            class="moon w-full bg-black bg-opacity-15 border border-1 border-white border-opacity-10 backdrop-blur-sm rounded-lg pb-2 col-span-2
             md:col-span-1 "
           >
             <div
-              class="heading sticky top-0 z-10 bg-white/10 text-[#7cabf2f0] backdrop-blur-xl px-3 pb-1 pt-2 rounded-t-md"
+              class="heading sticky top-0 z-10 bg-black/10 text-[#7cabf2f0] backdrop-blur-xl px-3 pb-1 pt-2 rounded-t-md"
             >
               <p class="Title">
                 <i class="bi bi-moon-stars mr-1"></i> 
@@ -213,10 +213,10 @@ export function createHomepage() {
           </div>
 
           <div
-            class="hourlyforcast mt-0 lg:mt-8 w-full bg-white bg-opacity-15 border border-1 border-white border-opacity-10 backdrop-blur-sm rounded-lg pb-2 col-span-2 md:col-span-1"
+            class="hourlyforcast mt-0 lg:mt-8 w-full bg-black bg-opacity-15 border border-1 border-white border-opacity-10 backdrop-blur-sm rounded-lg pb-2 col-span-2 md:col-span-1"
           >
             <div
-              class="heading sticky top-0 z-10 bg-white/10 text-[#7cabf2f0] backdrop-blur-xl px-3 pb-1 pt-2 rounded-t-md"
+              class="heading sticky top-0 z-10 bg-black/10 text-[#7cabf2f0] backdrop-blur-xl px-3 pb-1 pt-2 rounded-t-md"
             >
               <p class="Title">
                 <i class="bi bi-clock mr-1"></i> Hourly Forcast
@@ -303,10 +303,10 @@ export function createHomepage() {
           </div>
 
           <div
-            class="dailyforcast mt-8 w-full bg-white bg-opacity-15 border border-1 border-white border-opacity-10 backdrop-blur-sm rounded-lg pb-2 col-span-2 mb-4"
+            class="dailyforcast mt-8 w-full bg-black bg-opacity-15 border border-1 border-white border-opacity-10 backdrop-blur-sm rounded-lg pb-2 col-span-2 mb-4"
           >
             <div
-              class="heading sticky top-0 z-10 bg-white/10 text-[#7cabf2f0] backdrop-blur-xl px-3 pb-1 pt-2 rounded-t-md"
+              class="heading sticky top-0 z-10 bg-black/10 text-[#7cabf2f0] backdrop-blur-xl px-3 pb-1 pt-2 rounded-t-md"
             >
               <p class="Title">
                 <i class="bi bi-calendar4-week mr-1"></i> 10-Days Forcast
@@ -398,14 +398,14 @@ export function createHomepage() {
       <div id="popular" class="h-fit lg:h-full w-full lg:w-1/3 flex">
         <div class="h-full w-full flex flex-col pb-3">
           <div
-            class="heading sticky top-0 z-10 bg-white/10 text-[#7cabf2f0] backdrop-blur-xl px-3 pb-1 pt-2 mb-4 rounded-t-md"
+            class="heading sticky top-0 z-10 bg-black/10 text-[#7cabf2f0] backdrop-blur-xl px-3 pb-1 pt-2 mb-4 rounded-t-md"
           >
             <p class="Title">Popular Cities</p>
           </div>
 
           <div class="cities text-white flex lg:flex-col gap-5 overflow-auto h-full w-full">
             <div
-              class="lagos relative flex p-4  bg-white/10 rounded-2xl  border border-white/10 min-w-60 w-2/3 md:w-2/6 lg:w-full h-fit"
+              class="lagos relative flex p-4  bg-black/10 rounded-2xl  border border-white/10 min-w-60 w-2/3 md:w-2/6 lg:w-full h-fit"
             >
               <div class="flex flex-col mr-auto h-fill z-10">
                 <p class="text-lg">Lagos</p>
@@ -425,7 +425,7 @@ export function createHomepage() {
               ></video>
             </div>
             <div
-              class="lagos relative flex p-4  bg-white/10 rounded-2xl  border border-white/10 min-w-60 w-2/3 md:w-2/6 lg:w-full h-fit"
+              class="lagos relative flex p-4  bg-black/10 rounded-2xl  border border-white/10 min-w-60 w-2/3 md:w-2/6 lg:w-full h-fit"
             >
               <div class="flex flex-col mr-auto h-fill z-10">
                 <p class="text-lg">Lagos</p>
@@ -447,7 +447,7 @@ export function createHomepage() {
             
           </div>
           <div class="AddCity flex mt-2">
-            <footer class="flex bg-white/15 backdrop-blur-sm rounded-md">
+            <footer class="flex bg-black/15 backdrop-blur-sm rounded-md">
               <input type="text"
                 name="search"
                 id="add"
@@ -475,8 +475,27 @@ export function createHomepage() {
   const hourlyImg = document.querySelectorAll(".hourlyImg");
   const city = document.querySelectorAll(".cityBackground");
 
-  video.src = videolink;
+  document.addEventListener("DOMContentLoaded", function () {
+    if (video) {
+      video.src = videolink;
+      video.autoplay = true;
+      video.loop = true;
+      video.muted = true;
+      video.controls = false;
+
+      // For some browsers that need a nudge to start the video
+
+      const playVideo = () => {
+        video.play().catch((error) => {
+          console.error("Video playback failed:", error);
+          // Handle the error as needed
+        });
+      };
+      playVideo();
+    }
+  });
   logo.src = logolink;
+
   moonimg.src = moon;
   hourlyImg.forEach((e) => (e.src = hourlyCond));
   if (city.length) {

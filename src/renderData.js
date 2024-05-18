@@ -12,7 +12,6 @@ export function transformDate(dateStr, pattern) {
       throw new RangeError(`invalid time value: ${dateStr}`);
     }
 
-    console.log(format(date, pattern));
     return format(date, pattern);
   } catch (error) {
     console.log("Date Parsing error:", error.message);

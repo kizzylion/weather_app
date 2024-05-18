@@ -1,5 +1,6 @@
 import { format } from "date-fns";
 import { returnSelectedDegree } from "./renderData";
+import { transformDate } from "./renderData";
 
 export async function createDailyInfo(data) {
   let eachDay = document.querySelector(".eachDay");
@@ -23,8 +24,8 @@ export async function createDailyInfo(data) {
         );
         list.innerHTML = `
         <div class="text-left">
-            <p>Today</p>
-            <p class="text-xs text-white/70">May 11</p>
+            <p>${transformDate(data.forecast.forecastday[i].date, "E")}</p>
+            <p class="text-xs text-white/70">${transformDate(data.forecast.forecastday[i].date, "MMM d")}</p>
         </div>
         <p>
             <img src=${imgUrl} class="hourlyImg mx-auto w-fill object-contain backdrop-blur-0" alt="">

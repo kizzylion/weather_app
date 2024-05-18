@@ -10,6 +10,16 @@ import { createHomepage } from "./createHomepage";
 
 createHomepage();
 
+let searchForm = document.querySelector("#searchform");
+export function showLoadingScreen() {
+  document.getElementById("loadingScreen").classList.remove("hidden");
+}
+
+// Function to hide the loading screen
+export function hideLoadingScreen() {
+  document.getElementById("loadingScreen").classList.add("hidden");
+}
+
 const currentLocationData = await getCurrentLocation()
   .then((position) => {
     console.log("Position:", position);
@@ -21,8 +31,6 @@ const currentLocationData = await getCurrentLocation()
     // Handle errors here
   });
 console.log(currentLocationData);
-
-let SearchData;
 
 const defaultLocationData = await getCityWeatherData("London");
 console.log(defaultLocationData);
