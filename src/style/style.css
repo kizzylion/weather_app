@@ -10,9 +10,13 @@
 }
 :root {
   font-size: 16px;
+
+  --day: #013e92;
+  --evening: #537189;
+  --night: #040e1d;
 }
 body {
-  background: linear-gradient(180deg, #111 0%, #031d3d 53%);
+  background: linear-gradient(180deg, #111 0%, #0d223f 87%);
 }
 
 /* Styles for loading screen */
@@ -54,7 +58,7 @@ body {
 }
 
 main {
-  background: linear-gradient(180deg, #ecf5ff10 0%, #0d223fc3 65%);
+  /* background: linear-gradient(180deg, #ecf5ff00 0%, var(--night) 30%); */
 }
 
 #bgvideo {
@@ -66,11 +70,11 @@ main {
   min-height: 100%;
   width: auto;
   height: auto;
-  opacity: 0.5;
-  /* background: linear-gradient(180deg, #11111100 0%, #0d223f 48.5%); */
+  opacity: 0.9;
+  background: linear-gradient(180deg, #11111100 0%, #0d223f 78.5%);
   /* mix-blend-mode: screen; */
   transform: translate(-50%, -50%);
-  background: url("/src/img/video.mp4") no-repeat;
+  /* background: url("/src/img/video.mp4") no-repeat; */
   background-size: cover;
   object-fit: cover;
 }

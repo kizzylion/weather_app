@@ -1,7 +1,10 @@
-import { parseISO, format } from "date-fns";
+import { parseISO, getHours, format } from "date-fns";
 import { createHourlyInfo } from "./createHourlySection";
 import { createDailyInfo } from "./dailyForcastSection";
 import { data } from "autoprefixer";
+import morningVideo from "./img/video.mp4";
+import eveningVideo from "./img/evening.mp4";
+import nightVideo from "./img/night.mp4";
 
 export function transformDate(dateStr, pattern) {
   try {
@@ -18,9 +21,12 @@ export function transformDate(dateStr, pattern) {
   }
 }
 
+let videoLink;
+
 // console.log(transformDate("2024-05-18 10:00", "h a"));
 
 export async function renderData(data) {
+  let main = document.querySelector("main");
   let city = document.querySelector(".city");
   let country = document.querySelector(".country");
   let date = document.querySelector(".date");
@@ -28,6 +34,7 @@ export async function renderData(data) {
   let currentWeatherIcon = document.querySelector(".weathericon img");
   let weatherCondition = document.querySelector(".weathercondition");
   let weatherTemperature = document.querySelector(".temp");
+  const degreeForm = document.querySelector("#degreeForm");
   const degree = document.querySelector("#degree");
   let windSpeed = document.querySelector("#currentDetail .windspeed");
   let humidity = document.querySelector("#currentDetail .humidity .text");
@@ -50,6 +57,7 @@ export async function renderData(data) {
   city.innerText = data.location.name;
   country.innerText = data.location.country;
   date.innerText = transformDate(data.location.localtime, "MMM dd, yyyy");
+
   time.innerText = transformDate(data.location.localtime, "h:mm a");
   windSpeed.innerText = data.current.wind_kph;
   humidity.innerText = data.current.humidity;
@@ -88,7 +96,9 @@ export async function renderData(data) {
   )}`;
 
   //Degree Switch
-  degree.addEventListener("change", function () {
+  degreeForm.addEventListener("change", function (elem) {
+    // prevent reload
+    elem.preventDefault();
     console.log(getSelectedDegree());
     renderData(data);
   });
@@ -103,6 +113,14 @@ export async function renderData(data) {
 
   //daily section
   createDailyInfo(data);
+
+  //video src
+  let video = document.querySelector("#bgvideo");
+  videoSrc(data.location.localtime);
+  video.src = videoLink;
+
+  //bg color
+  main.style.background = bgColor(data.location.localtime);
 }
 
 export function returnSelectedDegree(celsius, fahrenheit) {
@@ -111,4 +129,27 @@ export function returnSelectedDegree(celsius, fahrenheit) {
 
 function getSelectedDegree() {
   return degree.value;
+}
+
+function videoSrc(date) {
+  const hours = getHours(date);
+
+  if (hours >= 5 && hours < 17) {
+    videolink = morningVideo;
+  } else if (hours >= 17 && hours < 20) {
+    videoLink = eveningVideo;
+  } else {
+    videoLink = nightVideo;
+  }
+}
+export function bgColor(date) {
+  const hours = getHours(date);
+
+  if (hours >= 5 && hours < 17) {
+    return "linear-gradient(180deg, #ecf5ff00 0%, #013e92 50%)";
+  } else if (hours >= 17 && hours < 20) {
+    return "linear-gradient(180deg, #ecf5ff00 0%, #537189 50%)";
+  } else {
+    return "linear-gradient(180deg, #ecf5ff00 0%, #040e1d 40%)";
+  }
 }

@@ -35,11 +35,13 @@ export function createHomepage() {
         </p>
       </form>
       <span class="flex items-center ml-auto p-2 w-fit h-fit">
-    
+        <form id="degreeForm">
         <select name="degree" id="degree" class="">
           <option value="celsius" selected>˚C</option>
           <option value="fahrenheit">˚F</option>
         </select>
+        </form>
+
       </span>
     </div>
   </div>
@@ -180,7 +182,7 @@ export function createHomepage() {
             md:col-span-1 "
           >
             <div
-              class="heading sticky top-0 z-10 bg-black/10 text-[#7cabf2f0] backdrop-blur-xl px-3 pb-1 pt-2 rounded-t-md"
+              class="heading sticky top-0 z-10 bg-black/10 text-[#7cabf2f0] px-3 pb-1 pt-2 rounded-t-md"
             >
               <p class="Title">
                 <i class="bi bi-moon-stars mr-1"></i> 
@@ -216,7 +218,7 @@ export function createHomepage() {
             class="hourlyforcast mt-0 lg:mt-8 w-full bg-black bg-opacity-15 border border-1 border-white border-opacity-10 backdrop-blur-sm rounded-lg pb-2 col-span-2 md:col-span-1"
           >
             <div
-              class="heading sticky top-0 z-10 bg-black/10 text-[#7cabf2f0] backdrop-blur-xl px-3 pb-1 pt-2 rounded-t-md"
+              class="heading sticky top-0 z-10 bg-black/10 text-[#7cabf2f0]  px-3 pb-1 pt-2 rounded-t-md"
             >
               <p class="Title">
                 <i class="bi bi-clock mr-1"></i> Hourly Forcast
@@ -475,7 +477,7 @@ export function createHomepage() {
   const hourlyImg = document.querySelectorAll(".hourlyImg");
   const city = document.querySelectorAll(".cityBackground");
 
-  document.addEventListener("DOMContentLoaded", function () {
+  document.addEventListener("DOMContentLoaded", async function () {
     if (video) {
       video.src = videolink;
       video.autoplay = true;

@@ -7,11 +7,12 @@ import { getCurrentLocation } from "./getCurrentLocation";
 import { getPositionWeatherData, getCityWeatherData } from "./fetchWeatherData";
 import { renderData } from "./renderData";
 import { createHomepage } from "./createHomepage";
+import { searchCityData } from "./searchCityData";
 
 createHomepage();
 
 let searchForm = document.querySelector("#searchform");
-let searchInput = document.querySelector("#searchform input");
+export let searchInput = document.querySelector("#searchform input");
 export function showLoadingScreen() {
   document.getElementById("loadingScreen").classList.remove("hidden");
 }
@@ -44,12 +45,8 @@ if (currentLocationData) {
 
 searchForm.addEventListener("submit", searchCityData);
 
-async function searchCityData(event) {
-  //
-  event.preventDefault();
-  let city = searchInput.value;
-  let searchCityData = await getCityWeatherData(city);
-  searchCityData == undefined
-    ? alert("Cant find city")
-    : renderData(searchCityData);
-}
+const logo = document.getElementById("logo");
+
+logo.addEventListener("click", function () {
+  location.reload(); // Reloads the current page
+});
