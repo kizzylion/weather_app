@@ -11,6 +11,7 @@ import { createHomepage } from "./createHomepage";
 createHomepage();
 
 let searchForm = document.querySelector("#searchform");
+let searchInput = document.querySelector("#searchform input");
 export function showLoadingScreen() {
   document.getElementById("loadingScreen").classList.remove("hidden");
 }
@@ -39,4 +40,16 @@ if (currentLocationData) {
   renderData(currentLocationData);
 } else {
   renderData(defaultLocationData);
+}
+
+searchForm.addEventListener("submit", searchCityData);
+
+async function searchCityData(event) {
+  //
+  event.preventDefault();
+  let city = searchInput.value;
+  let searchCityData = await getCityWeatherData(city);
+  searchCityData == undefined
+    ? alert("Cant find city")
+    : renderData(searchCityData);
 }
