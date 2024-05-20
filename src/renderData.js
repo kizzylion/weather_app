@@ -163,10 +163,24 @@ export async function renderData(data) {
   //video src
   let video = document.querySelector("#bgvideo");
 
-  video.src = videoSrc(data.location.localtime);
+  video.src = videoSrc(transformDate(data.location.localtime, "h"));
+  video.autoplay = true;
+  video.loop = true;
+  video.muted = true;
+  video.controls = false;
+
+  // For some browsers that need a nudge to start the video
+
+  const playVideo = () => {
+    video.play().catch((error) => {
+      console.error("Video playback failed:", error);
+      // Handle the error as needed
+    });
+  };
+  playVideo();
 
   //bg color
-  main.style.background = bgColor(data.location.localtime);
+  main.style.background = bgColor(transformDate(data.location.localtime, "h"));
 }
 
 export function returnSelectedDegree(celsius, fahrenheit) {
@@ -178,7 +192,8 @@ function getSelectedDegree() {
 }
 
 function videoSrc(date) {
-  const hours = getHours(date);
+  const hours = date;
+  console.log(hours);
 
   if (hours >= 5 && hours < 17) {
     return morningVideo;
@@ -189,7 +204,7 @@ function videoSrc(date) {
   }
 }
 export function bgColor(date) {
-  const hours = getHours(date);
+  const hours = date;
 
   if (hours >= 5 && hours < 17) {
     return "linear-gradient(180deg, #ecf5ff00 0%, #013e92 50%)";

@@ -478,23 +478,21 @@ export function createHomepage() {
   const city = document.querySelectorAll(".cityBackground");
 
   document.addEventListener("DOMContentLoaded", async function () {
-    if (video) {
-      video.src = videolink;
-      video.autoplay = true;
-      video.loop = true;
-      video.muted = true;
-      video.controls = false;
-
-      // For some browsers that need a nudge to start the video
-
-      const playVideo = () => {
-        video.play().catch((error) => {
-          console.error("Video playback failed:", error);
-          // Handle the error as needed
-        });
-      };
-      playVideo();
-    }
+    // if (video) {
+    //   // video.src = videolink;
+    //   video.autoplay = true;
+    //   video.loop = true;
+    //   video.muted = true;
+    //   video.controls = false;
+    //   // For some browsers that need a nudge to start the video
+    //   const playVideo = () => {
+    //     video.play().catch((error) => {
+    //       console.error("Video playback failed:", error);
+    //       // Handle the error as needed
+    //     });
+    //   };
+    //   playVideo();
+    // }
   });
   logo.src = logolink;
 
