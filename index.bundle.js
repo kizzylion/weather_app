@@ -325,7 +325,7 @@ function _createHourlyInfo() {
                   }).then(function (imgUrl) {
                     var list = document.createElement("li");
                     list.classList.add("day", "shrink-0", "w-fit", "flex", "flex-col", "px-3", "py-2", "gap-1");
-                    list.innerHTML = "\n        <p>".concat((0,format/* format */.GP)(new Date(hour.forecast.forecastday[0].hour[i].time), "h a"), "</p>\n        <p>\n          <img src=").concat(imgUrl, " class=\"hourlyImg mx-auto w-fill object-contain backdrop-blur-0\" alt=\"\">\n        </p>\n        <p class=\"font-medium\">").concat(returnSelectedDegree(hour.forecast.forecastday[0].hour[i].temp_c, hour.forecast.forecastday[0].hour[i].temp_f), "</p>\n        ");
+                    list.innerHTML = "\n        <p>".concat(transformDate(hour.forecast.forecastday[0].hour[i].time, "h a"), "</p>\n        <p>\n          <img src=").concat(imgUrl, " class=\"hourlyImg mx-auto w-fill object-contain backdrop-blur-0\" alt=\"\">\n        </p>\n        <p class=\"font-medium\">").concat(returnSelectedDegree(hour.forecast.forecastday[0].hour[i].temp_c, hour.forecast.forecastday[0].hour[i].temp_f), "</p>\n        ");
                     eachHour.appendChild(list);
                   })["catch"](function (error) {
                     return console.log(error);
@@ -553,7 +553,7 @@ function _renderData() {
 
           //video src
           video = document.querySelector("#bgvideo");
-          video.src = videoSrc(transformDate(data.location.localtime, "h"));
+          video.src = videoSrc(transformDate(data.location.localtime, "H"));
           video.autoplay = true;
           video.loop = true;
           video.muted = true;
@@ -569,7 +569,7 @@ function _renderData() {
           playVideo();
 
           //bg color
-          main.style.background = bgColor(transformDate(data.location.localtime, "h"));
+          main.style.background = bgColor(transformDate(data.location.localtime, "H"));
         case 53:
         case "end":
           return _context.stop();
