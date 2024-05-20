@@ -464,8 +464,23 @@ function renderData_asyncToGenerator(fn) { return function () { var self = this,
 function transformDate(dateStr, pattern) {
   try {
     // Parse the date string into a JavaScript Date object
+
     var dateString = dateStr;
-    var date = (0,parse/* parse */.qg)(dateString, "yyyy-MM-dd H:mm", new Date());
+    var patterns = ["yyyy-MM-dd H:mm", "yyyy-MM-dd HH:mm", "yyyy-MM-dd h:mm a", "yyyy-MM-dd hh:mm a", "yyyy/MM/dd H:mm", "yyyy/MM/dd HH:mm", "yyyy/MM/dd h:mm a", "yyyy/MM/dd hh:mm a", "MM/dd/yyyy H:mm", "MM/dd/yyyy HH:mm", "MM/dd/yyyy h:mm a", "MM/dd/yyyy hh:mm a", "dd-MM-yyyy H:mm", "dd-MM-yyyy HH:mm", "dd-MM-yyyy h:mm a", "dd-MM-yyyy hh:mm a", "dd/MM/yyyy H:mm", "dd/MM/yyyy HH:mm", "dd/MM/yyyy h:mm a", "dd/MM/yyyy hh:mm a", "yyyy-MM-dd", "yyyy/MM/dd", "MM/dd/yyyy", "dd-MM-yyyy", "dd/MM/yyyy", "yyyyMMdd", "HH:mm", "H:mm", "hh:mm a", "h:mm a"];
+    var date;
+
+    //find date pattern and return Date with the right pattern for formatting
+    for (var _i = 0, _patterns = patterns; _i < _patterns.length; _i++) {
+      var patternElem = _patterns[_i];
+      var parsedDate = (0,parse/* parse */.qg)(dateString, patternElem, new Date());
+
+      //Check if parsing was successful i.e if pattern matches the right date pattern
+      //return date with the right pattern
+      if (!isNaN(parsedDate.getTime())) {
+        date = parsedDate;
+      }
+      continue;
+    }
 
     // Format the date into the desired format
     var formattedDate = (0,format/* format */.GP)(date, pattern);

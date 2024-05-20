@@ -9,8 +9,54 @@ import nightVideo from "./img/night.mp4";
 export function transformDate(dateStr, pattern) {
   try {
     // Parse the date string into a JavaScript Date object
+
     const dateString = dateStr;
-    const date = parse(dateString, "yyyy-MM-dd H:mm", new Date());
+    const patterns = [
+      "yyyy-MM-dd H:mm",
+      "yyyy-MM-dd HH:mm",
+      "yyyy-MM-dd h:mm a",
+      "yyyy-MM-dd hh:mm a",
+      "yyyy/MM/dd H:mm",
+      "yyyy/MM/dd HH:mm",
+      "yyyy/MM/dd h:mm a",
+      "yyyy/MM/dd hh:mm a",
+      "MM/dd/yyyy H:mm",
+      "MM/dd/yyyy HH:mm",
+      "MM/dd/yyyy h:mm a",
+      "MM/dd/yyyy hh:mm a",
+      "dd-MM-yyyy H:mm",
+      "dd-MM-yyyy HH:mm",
+      "dd-MM-yyyy h:mm a",
+      "dd-MM-yyyy hh:mm a",
+      "dd/MM/yyyy H:mm",
+      "dd/MM/yyyy HH:mm",
+      "dd/MM/yyyy h:mm a",
+      "dd/MM/yyyy hh:mm a",
+      "yyyy-MM-dd",
+      "yyyy/MM/dd",
+      "MM/dd/yyyy",
+      "dd-MM-yyyy",
+      "dd/MM/yyyy",
+      "yyyyMMdd",
+      "HH:mm",
+      "H:mm",
+      "hh:mm a",
+      "h:mm a",
+    ];
+
+    let date;
+
+    //find date pattern and return Date with the right pattern for formatting
+    for (let patternElem of patterns) {
+      const parsedDate = parse(dateString, patternElem, new Date());
+
+      //Check if parsing was successful i.e if pattern matches the right date pattern
+      //return date with the right pattern
+      if (!isNaN(parsedDate.getTime())) {
+        date = parsedDate;
+      }
+      continue;
+    }
 
     // Format the date into the desired format
     const formattedDate = format(date, pattern);
