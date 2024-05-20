@@ -25,7 +25,7 @@ export async function createHourlyInfo(hour) {
           "gap-1",
         );
         list.innerHTML = `
-        <p>${format(new Date(hour.forecast.forecastday[0].hour[i].time), "h a")}</p>
+        <p>${transformDate(hour.forecast.forecastday[0].hour[i].time, "h a")}</p>
         <p>
           <img src=${imgUrl} class="hourlyImg mx-auto w-fill object-contain backdrop-blur-0" alt="">
         </p>

@@ -163,7 +163,7 @@ export async function renderData(data) {
   //video src
   let video = document.querySelector("#bgvideo");
 
-  video.src = videoSrc(transformDate(data.location.localtime, "h"));
+  video.src = videoSrc(transformDate(data.location.localtime, "H"));
   video.autoplay = true;
   video.loop = true;
   video.muted = true;
@@ -180,7 +180,7 @@ export async function renderData(data) {
   playVideo();
 
   //bg color
-  main.style.background = bgColor(transformDate(data.location.localtime, "h"));
+  main.style.background = bgColor(transformDate(data.location.localtime, "H"));
 }
 
 export function returnSelectedDegree(celsius, fahrenheit) {
