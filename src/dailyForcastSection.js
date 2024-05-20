@@ -6,7 +6,7 @@ export async function createDailyInfo(data) {
   let eachDay = document.querySelector(".eachDay");
   eachDay.innerHTML = "";
 
-  for (let i = 0; i < 7; i++) {
+  for (let i = 0; i < data.forecast.forecastday.length; i++) {
     const dayDiv = await fetch(data.forecast.forecastday[i].day.condition.icon)
       .then((response) => response.blob())
       .then((myBlob) => URL.createObjectURL(myBlob))
