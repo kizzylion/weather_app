@@ -91,7 +91,7 @@ function _getCityWeatherData() {
         case 0:
           (0,___WEBPACK_IMPORTED_MODULE_0__/* .showLoadingScreen */ .S0)();
           _context.prev = 1;
-          apiUrl = "https://api.weatherapi.com/v1/forecast.json?key=".concat(apiKey, "&q=").concat(city, "&days=7&aqi=no&alerts=no");
+          apiUrl = "https://api.weatherapi.com/v1/forecast.json?key=".concat(apiKey, "&q=").concat(city, "&days=3&aqi=no&alerts=no");
           url = new URL(apiUrl);
           request = new Request(url, {
             method: "GET"
@@ -139,7 +139,7 @@ function _getPositionWeatherData() {
           (0,___WEBPACK_IMPORTED_MODULE_0__/* .showLoadingScreen */ .S0)();
           //
           _context2.prev = 1;
-          apiUrl = "https://api.weatherapi.com/v1/forecast.json?key=".concat(apiKey, "&q=").concat(position.latitude, ",").concat(position.longitude, "&days=7&aqi=no&alerts=no");
+          apiUrl = "https://api.weatherapi.com/v1/forecast.json?key=".concat(apiKey, "&q=").concat(position.latitude, ",").concat(position.longitude, "&days=3&aqi=no&alerts=no");
           url = new URL(apiUrl);
           request = new Request(url, {
             method: "GET"
@@ -404,7 +404,7 @@ function _createDailyInfo() {
           });
           i = 0;
         case 4:
-          if (!(i < 7)) {
+          if (!(i < data.forecast.forecastday.length)) {
             _context2.next = 9;
             break;
           }
