@@ -1,4 +1,4 @@
-import { parseISO, getHours, format } from "date-fns";
+import { getHours, format, formatISO, parse } from "date-fns";
 import { createHourlyInfo } from "./createHourlySection";
 import { createDailyInfo } from "./dailyForcastSection";
 import { data } from "autoprefixer";
@@ -8,14 +8,14 @@ import nightVideo from "./img/night.mp4";
 
 export function transformDate(dateStr, pattern) {
   try {
-    const date = parseISO(dateStr);
+    // Parse the date string into a JavaScript Date object
+    const dateString = dateStr;
+    const date = parse(dateString, "yyyy-MM-dd H:mm", new Date());
 
-    if (isNaN(date)) {
-      return format(dateStr, pattern);
-      throw new RangeError(`invalid time value: ${dateStr}`);
-    }
+    // Format the date into the desired format
+    const formattedDate = format(date, pattern);
 
-    return format(date, pattern);
+    return formattedDate;
   } catch (error) {
     console.log("Date Parsing error:", error.message);
   }
@@ -116,8 +116,8 @@ export async function renderData(data) {
 
   //video src
   let video = document.querySelector("#bgvideo");
-  videoSrc(data.location.localtime);
-  video.src = videoLink;
+
+  video.src = videoSrc(data.location.localtime);
 
   //bg color
   main.style.background = bgColor(data.location.localtime);
@@ -135,11 +135,11 @@ function videoSrc(date) {
   const hours = getHours(date);
 
   if (hours >= 5 && hours < 17) {
-    videolink = morningVideo;
+    return morningVideo;
   } else if (hours >= 17 && hours < 20) {
-    videoLink = eveningVideo;
+    return eveningVideo;
   } else {
-    videoLink = nightVideo;
+    return nightVideo;
   }
 }
 export function bgColor(date) {

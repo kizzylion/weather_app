@@ -58,7 +58,7 @@ body {
 }
 
 main {
-  /* background: linear-gradient(180deg, #ecf5ff00 0%, var(--night) 30%); */
+  background: linear-gradient(180deg, #ecf5ff00 0%, var(--day) 30%);
 }
 
 #bgvideo {

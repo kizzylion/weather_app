@@ -50,7 +50,7 @@ export function createHomepage() {
   <div class="container mx-auto w-full h-full px-5 md:px-8 pt-6 overflow-auto">
     <div class="section relative lg:h-full lg:flex lg:flex-row gap-6">
       <div
-        class="h-full grid grid-cols-1 lg:grid-cols-2 gap-8 w-full lg:w-2/3 lg:overflow-auto pr-3"
+        class="h-full grid grid-cols-1 lg:grid-cols-2 gap-8 w-full lg:w-2/3 lg:overflow-auto pr-0 lg:pr-3"
       >
         <div id="current" class="flex flex-col md:flex-row lg:block h-fit pb-6 rounded-md lg:overflow-auto">
           <div id="maincondition" class="py-6 w-full md:w-1/2 lg:w-full">
