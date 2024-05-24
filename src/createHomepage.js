@@ -197,6 +197,24 @@ export function createHomepage() {
                     <p class="illuminationvalue ml-auto text-[#7cabf2f0]">-%</p>
                   </li>
                   <li
+                    class="flex sunrise py-1 border-0 border-t border-white border-opacity-10"
+                  >
+                    <p class="font-light">Sunrise</p>
+                    <p class="sunrisetime ml-auto value text-[#7cabf2f0]">10:24 PM</p>
+                  </li>
+                  <li
+                    class="flex sunset py-1 border-0 border-t border-white border-opacity-10"
+                  >
+                    <p class="font-light">Sunset</p>
+                    <p class="sunsettime ml-auto value text-[#7cabf2f0]">10:24 PM</p>
+                  </li>
+                  <li
+                    class="flex moonrise py-1 border-0 border-t border-white border-opacity-10"
+                  >
+                    <p class="font-light">Moonrise</p>
+                    <p class="moonrisetime ml-auto value text-[#7cabf2f0]">10:24 PM</p>
+                  </li>
+                  <li
                     class="flex moonset py-1 border-0 border-t border-white border-opacity-10"
                   >
                     <p class="font-light">Moonset</p>

@@ -99,7 +99,10 @@ export async function renderData(data) {
     "#forecast #moon .illuminationvalue",
   );
   let moonPhase = document.querySelector("#forecast #moon .moonphase");
+  let sunset = document.querySelector("#forecast #moon .sunsettime");
+  let sunrise = document.querySelector("#forecast #moon .sunrisetime");
   let moonset = document.querySelector("#forecast #moon .moonsettime");
+  let moonrise = document.querySelector("#forecast #moon .moonrisetime");
 
   city.innerText = data.location.name;
   country.innerText = data.location.country;
@@ -154,6 +157,9 @@ export async function renderData(data) {
   //Moon Section
   illumination.innerText = `${data.forecast.forecastday[0].astro.moon_illumination}%`;
   moonPhase.textContent = `${data.forecast.forecastday[0].astro.moon_phase}`;
+  sunrise.innerText = data.forecast.forecastday[0].astro.sunrise;
+  sunset.innerText = data.forecast.forecastday[0].astro.sunset;
+  moonrise.innerText = data.forecast.forecastday[0].astro.moonrise;
   moonset.innerText = data.forecast.forecastday[0].astro.moonset;
 
   //hourly section
