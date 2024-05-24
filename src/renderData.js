@@ -5,6 +5,7 @@ import { data } from "autoprefixer";
 import morningVideo from "./img/video.mp4";
 import eveningVideo from "./img/evening.mp4";
 import nightVideo from "./img/night.mp4";
+import { PopularCitiesSection } from "./popularcities";
 
 export function transformDate(dateStr, pattern) {
   try {
@@ -147,6 +148,7 @@ export async function renderData(data) {
     elem.preventDefault();
     console.log(getSelectedDegree());
     renderData(data);
+    popularCitySection.printPopularCities();
   });
 
   //Moon Section
@@ -159,6 +161,19 @@ export async function renderData(data) {
 
   //daily section
   createDailyInfo(data);
+
+  //popular section
+  let popularSectionInput = document.querySelector("input#add");
+
+  const popularCitySection = new PopularCitiesSection();
+
+  popularCitySection.checkLocalStorage();
+
+  await popularCitySection.printPopularCities();
+  popularSectionInput.addEventListener("change", function (e) {
+    e.preventDefault();
+    popularCitySection.addCity(e.target.value);
+  });
 
   //video src
   let video = document.querySelector("#bgvideo");
@@ -191,7 +206,7 @@ function getSelectedDegree() {
   return degree.value;
 }
 
-function videoSrc(date) {
+export function videoSrc(date) {
   const hours = date;
   console.log(hours);
 

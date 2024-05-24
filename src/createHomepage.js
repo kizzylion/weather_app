@@ -451,7 +451,7 @@ export function createHomepage() {
           <div class="AddCity flex mt-2">
             <footer class="flex bg-black/15 backdrop-blur-sm rounded-md">
               <input type="text"
-                name="search"
+                name="add"
                 id="add"
                 placeholder="Add a City"
                 class=" focus:outline-none focus:ring-0 ring ring-transparent border border-transparent focus:border-none focus:outline-2 focus:outline-blue-500 rounded-lg px-2 py-1 w-full" />

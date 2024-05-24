@@ -8,6 +8,7 @@ import { getPositionWeatherData, getCityWeatherData } from "./fetchWeatherData";
 import { renderData } from "./renderData";
 import { createHomepage } from "./createHomepage";
 import { searchCityData } from "./searchCityData";
+import { PopularCitiesSection } from "./popularcities";
 
 createHomepage();
 
